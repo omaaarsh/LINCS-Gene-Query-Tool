@@ -11,7 +11,7 @@ BASE = "https://lincs-reverse-search-dashboard.dev.maayanlab.cloud/api/table"
 
 def lincs_cp(gene: str, direction: str = "up", top_n: int = 10000):
     """Query Chemical Perturbagens that up/down regulate a gene."""
-    url = f"{BASE}/cp/{direction}/{gene}"
+    url = f"{BASE}/cp/{direction}/{gene.upper()}"
     r = requests.get(url)
     r.raise_for_status()
     data = r.json()
