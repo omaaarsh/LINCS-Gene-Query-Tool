@@ -170,9 +170,7 @@ with st.sidebar:
 
 # Main content area
 if query_button and gene_name:
-    gene_upper = gene_name.upper()
-    print(gene_upper)
-    
+    gene_upper = gene_name.strip().upper()
     with st.spinner(f'Querying data for {gene_upper}...'):
         try:
             # Initialize containers for results
